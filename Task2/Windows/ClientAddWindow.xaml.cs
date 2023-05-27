@@ -42,9 +42,10 @@ namespace Task2.Windows
                 MessageBox.Show("Номер телефона не может быть пустым");
                 return;
             }
-            bool result = int.TryParse(TbNumber.Text, out var number);//Проверка на инт
-            if (result != true || Convert.ToInt32(TbNumber.Text)<0)
+            bool result = long.TryParse(TbNumber.Text, out var number);//Проверка на инт
+            if (result != true || Convert.ToInt64(TbNumber.Text)<0)
             {
+                MessageBox.Show(Convert.ToInt64(TbNumber.Text)+"");
                 MessageBox.Show("Номер телефона должна быть заполнена числами");
                 return;
             }
